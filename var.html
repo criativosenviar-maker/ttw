@@ -14,7 +14,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MKF9HT6T');</script>
 <!-- End Google Tag Manager -->
 
-<!-- VTurb -->
 <script>
 !function(i,n){
 i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())
@@ -33,150 +32,79 @@ as="script">
 href="https://cdn.converteai.net/5eacad5b-3bd7-422a-ba9d-81810e988eda/6a29a59c703fae361826964f/main.m3u8"
 as="fetch">
 
-<link rel="dns-prefetch" href="https://cdn.converteai.net">
-<link rel="dns-prefetch" href="https://scripts.converteai.net">
-<link rel="dns-prefetch" href="https://images.converteai.net">
-<link rel="dns-prefetch" href="https://license.vturb.com">
-
 <style>
-
-body{
-    margin:0;
-    background:#ececec;
-    font-family:Arial,sans-serif;
-}
-
-.topbar{
-    background:#c70000;
-    color:white;
-    text-align:center;
-    padding:10px 0;
-}
-
-.line1{
-    font-size:16px;
-    font-weight:bold;
-}
-
-.line2{
-    margin-top:8px;
-    font-size:15px;
-}
-
-.container{
-    margin-top:20px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-
-.audio-box{
-    margin-top:12px;
-    width:650px;
-    max-width:90%;
-    background:#dfe1e5;
-    border-radius:8px;
-    padding:12px;
-    text-align:center;
-    color:#222;
-    font-size:15px;
-}
-
-@media(max-width:768px){
-
-.audio-box{
-    width:95%;
-}
-
-}
-
+body{margin:0;background:#ececec;font-family:Arial,sans-serif;}
+.topbar{background:#c70000;color:white;text-align:center;padding:10px 0;}
+.line1{font-size:16px;font-weight:bold;}
+.line2{margin-top:8px;font-size:15px;}
+.container{margin-top:20px;display:flex;flex-direction:column;align-items:center;}
+.audio-box{margin-top:12px;width:650px;max-width:90%;background:#dfe1e5;border-radius:8px;padding:12px;text-align:center;color:#222;font-size:15px;}
+@media(max-width:768px){.audio-box{width:95%;}}
 </style>
-
 </head>
 <body>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKF9HT6T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <div class="topbar">
-
-    <div class="line1">
-        <span id="viewers">880</span> personas están viendo este video.
-    </div>
-
-    <div class="line2">
-        Debido a la alta demanda de accesos, garantizamos la presentación solo hasta:
-        <strong id="fecha"></strong>
-    </div>
-
+<div class="line1"><span id="viewers">880</span> personas están viendo este video.</div>
+<div class="line2">
+Debido a la alta demanda de accesos, garantizamos la presentación solo hasta:
+<strong id="fecha"></strong>
 </div>
-
+</div>
 
 <div class="container">
-
-    <!-- PLAYER -->
-    <vturb-smartplayer
-        id="vid-6a2f44e5d33ef46eda9da66e"
-        style="display:block;margin:0 auto;width:100%;max-width:400px;">
-    </vturb-smartplayer>
-
-    <script>
-        var s=document.createElement("script");
-        s.src="https://scripts.converteai.net/5eacad5b-3bd7-422a-ba9d-81810e988eda/players/6a2f44e5d33ef46eda9da66e/v4/player.js";
-        s.async=true;
-        document.head.appendChild(s);
-    </script>
-
-    <div class="audio-box">
-        🔊 Por favor, verifique que el sonido esté activado.
-    </div>
-
-</div>
-
+<vturb-smartplayer
+id="vid-6a2f44e5d33ef46eda9da66e"
+style="display:block;margin:0 auto;width:100%;max-width:400px;">
+</vturb-smartplayer>
 
 <script>
+var s=document.createElement("script");
+s.src="https://scripts.converteai.net/5eacad5b-3bd7-422a-ba9d-81810e988eda/players/6a2f44e5d33ef46eda9da66e/v4/player.js";
+s.async=true;
+document.head.appendChild(s);
+</script>
 
-// DATA ATUAL
+<div class="audio-box">
+🔊 Por favor, verifique que el sonido esté activado.
+</div>
+</div>
+
+<script>
 function atualizarData(){
-    let hoje=new Date();
-
-    let dia=String(hoje.getDate()).padStart(2,'0');
-    let mes=String(hoje.getMonth()+1).padStart(2,'0');
-    let ano=hoje.getFullYear();
-
-    document.getElementById("fecha").innerHTML=
-        `${dia}/${mes}/${ano}`;
+let hoje=new Date();
+let dia=String(hoje.getDate()).padStart(2,'0');
+let mes=String(hoje.getMonth()+1).padStart(2,'0');
+let ano=hoje.getFullYear();
+document.getElementById("fecha").innerHTML=`${dia}/${mes}/${ano}`;
 }
-
 atualizarData();
 
-
-// ESPECTADORES 800~1200
 function atualizarViewers(){
-
-    let atual=parseInt(
-        document.getElementById("viewers").innerText
-    );
-
-    let variacao=Math.floor(Math.random()*25)-12;
-
-    atual+=variacao;
-
-    if(atual<800)
-        atual=800+Math.floor(Math.random()*50);
-
-    if(atual>1200)
-        atual=1200-Math.floor(Math.random()*50);
-
-    document.getElementById("viewers").innerText=atual;
-
+let atual=parseInt(document.getElementById("viewers").innerText);
+let variacao=Math.floor(Math.random()*25)-12;
+atual+=variacao;
+if(atual<800) atual=800+Math.floor(Math.random()*50);
+if(atual>1200) atual=1200-Math.floor(Math.random()*50);
+document.getElementById("viewers").innerText=atual;
 }
-
-// Atualiza a cada 7 segundos
 setInterval(atualizarViewers,7000);
 
+// Passar parâmetros para todos os links
+(function(){
+const params = window.location.search;
+if(!params) return;
+
+document.querySelectorAll("a").forEach(link=>{
+const href = link.getAttribute("href");
+if(!href || href.startsWith("#") || href.startsWith("javascript:")) return;
+link.href = href + (href.includes("?") ? "&" : "?") + params.substring(1);
+});
+})();
 </script>
 
 </body>
