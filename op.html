@@ -38,13 +38,11 @@ as="fetch">
 
 body{
     margin:0;
-    background:#071c3d; /* TROQUE PELA COR QUE QUISER */
+    background:#071c3d;
     min-height:100vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     font-family:Arial,sans-serif;
 }
 
@@ -144,6 +142,24 @@ var s=document.createElement("script");
 s.src="https://scripts.converteai.net/c9d3a84e-29b3-4d36-b0c6-cc1bea58a1ac/players/6a2f4e1457b5fea2c93951bc/v4/player.js";
 s.async=true;
 document.head.appendChild(s);
+</script>
+
+<!-- SCRIPT PARA PASSAR TODOS OS PARÂMETROS DA URL -->
+<script>
+(function () {
+    const params = window.location.search;
+
+    if (!params) return;
+
+    document.querySelectorAll("a").forEach(link => {
+        const href = link.getAttribute("href");
+
+        if (!href || href.startsWith("#") || href.startsWith("javascript:")) return;
+
+        const separator = href.includes("?") ? "&" : "?";
+        link.href = href + separator + params.substring(1);
+    });
+})();
 </script>
 
 </body>
